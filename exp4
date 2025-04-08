@@ -1,23 +1,19 @@
-EXP -4
-set.seed(2022)
-x=sample(20:80,100,replace=T)
-x
-y=vector()
-for(i in 1:length(x))
-{ if(x[i]>=50)
-  {
-    y[i]=c("the student is pass")
-  }
-  else
-  {
-    y[i]=c("the student is fail")
-  }
-}
-y
-da=data.frame(x,y)
-da
-set.seed(2025)
-x = sample(20:80, 100, replace = TRUE)
-y = ifelse(x >= 50, "The student is pass", "The student is fail")
-da = data.frame(x,y)
-print(da)
+
+1.cbind(c("king","queen","jack","ace","ten"),c("spades","spades","spades","spades","spades"))
+
+
+2.mylist=c(1,2,3,4,5,6,7,8,9,10)
+
+ls1=list(list(1,2,3),list(4,5,6),list(7,8,9))
+matrix=matrix(unlist(ls1),byrow=T,nrow=3)
+matrix()
+
+student=list(1:10)
+h=list(c(100,52,63,84,79,5,4,5,8,6))
+w=list(c(2,89865,5,6598,9898,5,54,898,63,45))
+df=data.frame(unlist(student),unlist(h),unlist(w))
+names(df)=c("Students","Height","Weight")
+print(df)
+
+final_list=c(mylist,matrix,df)
+final_list
