@@ -1,0 +1,22 @@
+set.seed(2022)
+tossdice=function(numtoss)
+{dice=c(1:6)
+  result=sample(dice,numtoss,replace=TRUE)
+  dftotal=data.frame(table(result))
+  return(dftotal) }
+n=1000
+dice=tossdice(n)
+dice
+barplot(dice$Freq,names.arg = dice$result, main=paste("count of tossing a dice",n,"times"),col=sample(657,6))
+barplot(prop.table(dice$Freq),names.arg = dice$result,main=paste("probability of tossing a coin",n,"times"),col=sample(657,6))
+#function to plot 
+plotDice= function(dice)
+{   par(mfrow =c(2,1))
+barplot(dice$Freq,names.arg = dice$result, main=paste("count of tossing a dice",n,"times"),col=sample(657,6))
+barplot(prop.table(dice$Freq),names.arg=dice$result,main=paste("probability of tossing a coin",n,"times"),col=sample(657,6))
+}
+set.seed(2022)
+n=50
+dice = tossDice (n)
+dice
+plotDice(dice)
