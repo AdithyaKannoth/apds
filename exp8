@@ -1,12 +1,15 @@
-set.seed(2066)
-tosscoin=function(numtoss)
-{coin=c("H","T")
-  result= sample(coin,numtoss,replace=T)
-  dftotal= data.frame(table(result))
-  return(dftotal)  }
-n=100
-coin=tosscoin(numtoss=n)
+set.seed(2022)
+tosscoin = function(numToss) {
+  coin = c("H", "T")
+  result = sample(coin, numToss, replace = TRUE)
+  dftotal = data.frame(table(result))
+  dfprob = cbind(dftotal, prop.table(dftotal$Freq))
+  names(dfprob) = c("result", "Freq", "Probability")
+  return(dfprob)
+}
+n = 50
+coin = tosscoin(n)
 coin
-barplot(coin$Freq,names.arg = coin$result, main = paste("count of tossing the coin",n,"times"), col=c("red","blue"))
-barplot(prop.table(coin$Freq), names.arg=coin$result, main=paste("probability of tossing a coin",n,"times"),col=c("red","blue"))  
-par(mfrow=c(1,2))
+barplot(coin$Freq, names.arg = coin$result, main = paste("tossing a coin", n, "times"), col = c("red", "blue"))
+barplot(coin$Probability, names.arg = coin$result, main = paste("Probability of tossing a coin", n, "times"), col= c('red', 'blue'))
+
