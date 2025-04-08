@@ -1,0 +1,40 @@
+set.seed(2022)
+x=sample(30:100,200,replace=T)
+x
+y=vector()
+for( i in 1:length(x))
+{
+  if(x[i]<50)
+  {
+    y[i]=c("fail")
+  }
+  else
+  {
+    if(x[i]>=50&x[i]<60)
+    {
+      y[i]=c("second class")
+    }
+    else
+    {
+      if(x[i]>=60 & x[i]<70)
+      {
+        y[i]=c("first class")
+      }
+      else
+      {
+        if(x[i]>=70 & x[i]<80)
+        {
+          y[i]=c("first class with distinction")
+        }
+        else
+        {
+          if(x[i]>=80)
+          {
+            y[i]=c("outstanding")
+          }}}}}}
+y
+a=data.frame(x,y)
+gender=c(sample(c("m","f"),size=200,rep=T))
+gender
+a=data.frame(x,y,gender)
+a
