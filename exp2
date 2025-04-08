@@ -1,0 +1,40 @@
+EXP -2
+#1-2-1 Assigning values to the matrix 
+A=matrix(c(1,2,3,4),2,2)
+B=matrix(c(1,2,3,4),2,2,byrow = T)
+Print(A)
+#1-2-2 Assigning Labels to Rows & Columns 
+A=matrix(c(1,2,3,4),2,2,dimnames = list(c("A","B"),c("C","D")))
+B=matrix(c(1:4),1,4,dimnames = list(c(1),LETTERS[1:4]))
+print(B)
+#1-2-3 Add Row & Column of the matrix 
+A=matrix(c(1,2,3,4,5,6),3,2,byrow = T)
+print(A)
+B=matrix(c(1,2),1,2)
+print(B)
+C=rbind(A,B)
+print(C)
+D=cbind(C,c(2,3,4,5))
+print(D)
+#1-2-4 Find Transpose of the matrix 
+A=matrix(c(1,3,5,2,4,6,2,3,4,3,5,4),3,4)
+print(A)
+print(t(A))
+#1-2-5 Find Inverse of the matrix 
+B=matrix(c(1,2,3,4),2,2)
+print(B)
+I<-solve(B)
+print(I)
+#1-2-6 Round the values of the matrix 
+A=matrix(c(1,2,3,4),2,2)
+print(A)
+print(round(A%*%solve(A)))
+#1-2-7 Add,Subtract and Multipliation the matrix 
+A=matrix(c(1,2,3,4),2,2)
+B=matrix(c(5,6,7,8),2,2)
+print(A+B)
+print(A-B)
+print(A%*%B)
+#1-2-8 Assign Diagonal value of the matrix 
+D=diag(1:4)
+print(D)
